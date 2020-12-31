@@ -51,7 +51,6 @@ window.onload = function wait() {
             document.querySelector('#classes').appendChild(row);
         }
         getAllAlarms();
-        createNotification("test", "Test")
     })
 }
 
