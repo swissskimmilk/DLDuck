@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <title>DL Duck</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="body">
+    <div id="alert"></div>
+    <h2 class="header">Distance Learning Ducko</h2>
+    <h5>Settings:</h5>
+    <div class="form-group">
+        <label for="auto-open">Automatically open classes at scheduled time: </label>
+        <input type="checkbox" id="auto-open" name="auto-open">
+    </div>
+    <div class="form-group">
+        <label for="notification">Send notification: </label>
+        <select id="notifications" placeholder="N/A" class="custom-input">
+            <option value="null">Never</option>
+            <option value="0">At start</option>
+            <option value="5">5 minutes before</option>
+            <option value="15">15 minutes before</option>
+            <option value="30">30 minutes before</option>
+        </select>
+    </div>
+    <div class="form-group"><button id="settings-save" class="btn btn-primary" type="submit">Save</button></div>
+    <div class="nav">
+        <button id="class-redirect" class="nav-item">Classes</button>
+        <button id="edit-redirect" class="nav-item">Add classes</button>
+        <button id="settings-redirect" class="nav-item">Settings</button>
+    </div>
+    <script src="main.js"></script>
+    <script src="settings.js"></script>
+</body>
+</html>

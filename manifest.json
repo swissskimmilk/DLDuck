@@ -4,9 +4,17 @@
   "version": "1.0.0",
   "description": "The ultimate helper for all things distance learning",
   "short_name": "DL Duck",
-  "permissions": [ "activeTab", "declarativeContent", "storage", "<all_urls>", "tabs", "alarms" ],
+  "permissions": [ "activeTab", "declarativeContent", "storage", "<all_urls>", "tabs", "alarms", "notifications", "debugger", "background" ],
   "browser_action": {
-    "default_popup": "popup.html",
-    "default_icon": "duck.svg"
+    "default_popup": "classes.html",
+    "default_icon": "duck128.png"
+  },
+  "icons": {
+    "128": "duck128.png"
+  },
+
+  "background": {
+    "persistent": true,
+    "scripts": [ "alerts.js" ]
   }
 }

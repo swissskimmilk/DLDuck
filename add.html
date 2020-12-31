@@ -1,0 +1,63 @@
+﻿<!doctype html>
+<html>
+<head>
+    <title>DL Duck</title>
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body id="body" class="body">
+    <div id="alert"></div>
+    <h2 class="header">Distance Learning Ducko</h2>
+    <h5>Add a class:</h5>
+    <div class="form-group"><input id="add-name" placeholder="Name" type="text" style='width: 200px' class='custom-input'></div>
+    <div class="form-group">
+        <input id="add-date" type="date" class='custom-input' style="width:150px">
+        <input id="add-time" type="time" placeholder="24h Time" type="text" style='width: 125px' class='custom-input'>
+        <select id="add-frequency" placeholder="N/A" class="custom-input">
+            <option>One time</option>
+            <option>Weekly</option>
+            <option>Biweekly</option>
+        </select>
+    </div>
+    <div class="checkbox-list">
+        <div class="checkbox">
+            <label for="sun">Sun: </label>
+            <input type="checkbox" id="sun" class="large-checkbox">
+        </div>
+        <div class="checkbox">
+            <label for="mon">Mon: </label>
+            <input type="checkbox" id="mon" class="large-checkbox">
+        </div>
+        <div class="checkbox">
+            <label for="tues">Tues: </label>
+            <input type="checkbox" id="tues" class="large-checkbox">
+        </div>
+        <div class="checkbox">
+            <label for="weds">Weds: </label>
+            <input type="checkbox" id="weds" class="large-checkbox">
+        </div>
+        <div class="checkbox">
+            <label for="thurs">Thurs: </label>
+            <input type="checkbox" id="thurs" class="large-checkbox">
+        </div>
+        <div class="checkbox">
+            <label for="fri">Fri: </label>
+            <input type="checkbox" id="fri" class="large-checkbox">
+        </div>
+        <div class="checkbox">
+            <label for="sat">Sat: </label>
+            <input type="checkbox" id="sat" class="large-checkbox">
+        </div>
+    </div>
+    <div class="form-group"><input id="add-link" placeholder="Link" type="text" style='width: 380px' class='custom-input'></div>
+    <div class="form-group"><button id="add-submit" class="btn btn-primary" type="submit">Submit</button></div>
+    <div class="nav">
+        <button id="class-redirect" class="nav-item">Classes</button>
+        <button id="edit-redirect" class="nav-item">Add classes</button>
+        <button id="settings-redirect" class="nav-item">Settings</button>
+    </div>
+    <script src="alerts.js"></script>
+    <script src="main.js"></script>
+    <script src="add.js"></script>
+</body>
+</html>
