@@ -1,5 +1,4 @@
 chrome.alarms.onAlarm.addListener(function agh(alarm) {
-    console.log(agh.caller);
     var alarmName = alarm.name;
     var splitString = alarmName.split(',')
     if (splitString[0] == "main") {
@@ -10,7 +9,7 @@ chrome.alarms.onAlarm.addListener(function agh(alarm) {
                     for (var i = 0; i < classes.length; i++) {
                         if (classes[i][0] == splitString[1]) {
                             console.log("opening link")
-                            //chrome.tabs.create({ url: classes[i][4] })
+                            chrome.tabs.create({ url: classes[i][4] })
                             return;
                         }
                     }
@@ -26,6 +25,7 @@ chrome.alarms.onAlarm.addListener(function agh(alarm) {
                 return;
             }
             else {
+                console.log("sending notif")
                 createNotification("Class reminder", splitString[1] + " starts soon!")
             }
         })
@@ -98,7 +98,7 @@ function createNotification(name, message) {
         var options = {
             title: name,
             message: message,
-            iconUrl: 'duck.png',
+            iconUrl: 'duck600.png',
             type: 'basic', 
         };
         bg.chrome.notifications.create('name', options);
