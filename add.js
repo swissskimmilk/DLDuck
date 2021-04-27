@@ -96,7 +96,7 @@ document.querySelector('#add-submit').onclick = function () {
         chrome.storage.local.set({ classes: classes })
 
         //redirect to home
-        window.location.href = 'classes.html';
+        //window.location.href = 'classes.html';
     });
 }
 

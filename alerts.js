@@ -33,15 +33,18 @@ chrome.alarms.onAlarm.addListener(function agh(alarm) {
 });
 
 function createAlarms(name, datetime, weekdays, frequency) {
-    var datetimeValue = datetime.valueOf();
-    var i = datetime.getDay();
-    var count = 0;
-    while (true) {
-        if (weekdays[i] == true) {
-            var alarmName = name + "," + i;
-            var alarmTime = datetime;
-            alarmTime.setDate(datetime.getDate() + count);
-            chrome.runtime.getBackgroundPage(function (bg) {
+    chrome.runtime.getBackgroundPage(function (bg) {
+        var i = datetime.getDay();
+        var startDate = datetime.getDate();
+        var count = 0;
+        while (true) {
+            console.log(count);
+            if (weekdays[i] == true) {
+                var alarmName = name + "," + i;
+                console.log(alarmName);
+                var alarmTime = new Date(datetime.getTime());
+                alarmTime.setDate(startDate + count);
+                console.log(alarmTime);
                 if (frequency == "One time") {
                     bg.chrome.alarms.create(alarmName, { when: alarmTime.valueOf() })
                     bg.chrome.alarms.get(alarmName, function (alarm) {
@@ -60,17 +63,17 @@ function createAlarms(name, datetime, weekdays, frequency) {
                         console.log(alarm);
                     });
                 }
-            });
+            }
+            count++;
+            if (i < 6)
+                i++;
+            else
+                i = 0;
+            if (count == 7) {
+                return;
+            }
         }
-        count++;
-        if (i < 6)
-            i++;
-        else
-            i = 0;
-        if (count == 6) {
-            return;
-        }
-    }
+    });
 }
 
 function getAllAlarms() {

@@ -10,82 +10,13 @@ window.onload = function wait() {
         for (var i = 0; i < result.classes.length; i++) {
             var row = document.createElement("tr");
             //nested loop
-            for (var j = 0; j < 5; j++) {
+            for (var j = 0; j < 4; j++) {
                 if (j == 1) {
                     //slice the string to remove the year 
                     slicedString = result.classes[i][j].slice(5);
 
                     var cell = document.createElement("td");
                     var textNode = document.createTextNode(slicedString);
-                    row.appendChild(cell).appendChild(textNode);
-                }
-                else if (j == 4) {
-                    var days = "";
-                    if (result.classes[i][5][0] == true) {
-                        if (days) {
-                            days = days + "-";
-                            days = days + "Sun";
-                        }
-                        else if (!days) {
-                            days = "Sun";
-                        }
-                    }
-                    if (result.classes[i][5][1] == true) {
-                        if (days) {
-                            days = days + "-";
-                            days = days + "Mon";
-                        }
-                        else if (!days) {
-                            days = "Mon";
-                        }
-                    }
-                    if (result.classes[i][5][2] == true) {
-                        if (days) {
-                            days = days + "-";
-                            days = days + "Tues";
-                        }
-                        else if (!days) {
-                            days = "Tues";
-                        }
-                    }
-                    if (result.classes[i][5][3] == true) {
-                        if (days) {
-                            days = days + "-";
-                            days = days + "Weds";
-                        }
-                        else if (!days) {
-                            days = "Weds";
-                        }
-                    }
-                    if (result.classes[i][5][4] == true) {
-                        if (days) {
-                            days = days + "-";
-                            days = days + "Thurs";
-                        }
-                        else if (!days) {
-                            days = "Thurs";
-                        }
-                    }
-                    if (result.classes[i][5][5] == true) {
-                        if (days) {
-                            days = days + "-";
-                            days = days + "Fri";
-                        }
-                        else if (!days) {
-                            days = "Fri";
-                        }
-                    }
-                    if (result.classes[i][5][6] == true) {
-                        if (days) {
-                            days = days + "-";
-                            days = days + "Sat";
-                        }
-                        else if (!days) {
-                            days = "Sat";
-                        }
-                    }
-                    var cell = document.createElement("td");
-                    var textNode = document.createTextNode(days);
                     row.appendChild(cell).appendChild(textNode);
                 }
                 else {
